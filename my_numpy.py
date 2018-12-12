@@ -16,6 +16,15 @@ print("np.eye\n", np.eye(10, 10))
 # 从数值范围创建数组 开始，结束，步长，输出元素类型
 print("np.arange\n", np.arange(0, 100, 2, float))
 
+# 生产随机数组 5行5列 范围0～1
+print(np.random.rand(5, 5))
+
+# 生成在半开半闭区间 [low,high)上离散均匀分布的整数值;若high=None，则取值区间变为[0,low) ; size维度
+print(np.random.randint(4, 10, size=(5, 5)))
+
+# 给定均值/标准差/维度的正态分布
+print(np.random.normal(1.75, 0.1, (3, 4)))
+
 # 将列表转换为np数组
 array = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 
@@ -108,9 +117,48 @@ print('n6[:, 0]]:\n', n6[:, 0])
 print('n6[:, 3:5]]:\n', n6[:, 3:5])
 
 '''
-矩阵与向量
+基础运算
+'''
+n7 = np.asarray([10, 20, 30, 40])
+n8 = np.arange(4)
+print(n7)
+print(n8)
+
+# 计算立方
+print(n7 ** 3)
+
+# 三角函数
+print(np.sin(n7))
+
+# 指定轴最大/小值
+print(np.amax(n7, axis=0))
+print(np.amin(n7, axis=0))
+
+# 平均值
+print(np.mean(n7, axis=0))
+
+# 标准差
+print(np.std(n7, axis=0))
+
+# 两个np相减
+print("n7-n8:", n7 - n8)
+
+n9 = np.asarray([[1, 1], [0, 1]])
+n10 = np.arange(4).reshape((2, 2))
+
+# 两个np逐位相乘（非矩阵乘法）
+print(n9 * n10)
+
+'''
+矩阵运算
 '''
 A = np.array([[2, 1, -2], [3, 0, 1], [1, 1, -1]])
 B = np.transpose(np.array([[-3, 5, -2]]))
 x = np.linalg.solve(A, B)
 print('x:\n', x)
+
+# 矩阵乘法
+A = np.array([[3, 2, -2], [3, 1, 4], [3, 1, -2]])
+B = np.arange(9).reshape((3, 3))
+C = np.dot(A, B)
+print('C:\n', C)

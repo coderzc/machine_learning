@@ -64,7 +64,7 @@ if __name__ == '__main__':
     w, h = img.size
     h_ = 0
     if HEIGHT == 0:
-        h_ = int(((WIDTH * h) / w) * 0.415)
+        h_ = int(((WIDTH * h) / w) * 0.40)
     else:
         h_ = HEIGHT
     img = img.resize((WIDTH, h_), Image.NEAREST)
