@@ -1,6 +1,12 @@
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
+'''
+更多关于图片处理库：
+https://blog.csdn.net/renelian1572/article/details/78761278
+https://blog.csdn.net/dss875914213/article/details/84974472
+'''
+
 
 # 显示图片
 def show_img(img):
